@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://kit.fontawesome.com/516c79b89d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i><!---cross icon-->
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i> <!---Menu icon-->
+        </nav>
+        <div class="header-text">
+            <p>Web Developer(newbie)</p>
+            <h1>Hi, I'm <span class="auto-input"></span></h1>
+            </div>
+    </div>
+</div>
+
+<!-------------------------About------------------------->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+        
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p><br>Hey! I'm Tri Febriyanto.</p>
+
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Languages</span><br> HTML <br> CSS <br> PHP
+                    <li><span>Platforms</span><br> Windows</li>
+                    <li><span>Database</span><br> SQL</li>
+                </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span></span><br>-</li>                                    
+                </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2020 - 2023</span><br>Pursuing B.E in Computer Engineering at AISSMS College Of Engineering </li>                           
+                    <li><span>2017 - 2020</span><br>Completed Diploma,Computer Tech Bharati Vidyapeeth Jawaharlal Nehru Institute of Technology (Polytechnic) Pune</li>
+                    <li><span>2016 - 2017</span><br>Priyadarshini Madhyamik Vidhya Mandir, Pune</li>           
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+        
+    </div>
+</div>
+
+<!--------------------Services-------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">AREA OF INTEREST</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>Web development, also known as website development, refers to the tasks associated with creating, building, and maintaining websites 
+                    and web applications that run online on a browser. It may, however, also include web design, web programming, and database management.</p>
+                <a href="https://www.geeksforgeeks.org/web-development/">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Database Management</h2>
+                <p>Database Management allows a person to organize, store, and retrieve data from a computer. Database Management can also describe the data storage, 
+                operations, and security practices of a database administrator (DBA) throughout the life cycle of the data. Managing a database involves designing, 
+                implementing, and supporting stored data to maximize its value.</p>
+                <a href="https://www.geeksforgeeks.org/introduction-of-dbms-database-management-system-set-1/">Learn More</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-desktop"></i>
+                <h2>Software Development</h2>
+                <p>Software development is the process programmers use to build computer programs. The process, also known as the Software Development Life Cycle (SDLC),
+                includes several phases that provide a method for building products that meet technical specifications and user requirements.</p>
+                <a href="https://www.indeed.com/career-advice/career-development/what-is-software-development">Learn More</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!------------------contact------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> trifebriyanto99@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +62 815-1923-3990</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/fbrynto9/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/adarshbhosale2001"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="trifebriyanto99@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+
+            </div>
+
+<!------------------Contact Form------------->
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+              </form>
+              <span id="msg"></span>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @3F <i class="fa-solid fa-heart"> </i>
+               </p>
+        </div>
+</div>
+    
+
+<!------------------Script------------->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); /*color display all name in about me section*/
+        document.getElementById(tabname).classList.add("active-tab"); /*display skill,exp,education detail after click*/
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwh4rJIt_bw9f-VTzdQhboShMsW95esis3SHeAYZyDqmuVfb_T2r24ADFBs8EsE7hm-vg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully.."
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },8000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+ <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+ <script>
+     var typed = new Typed(".auto-input", {
+         strings: ["Tri Febriyanto","From Jakarta"],
+         typeSpeed: 300,
+         lockSpeed: 50,
+         loop: true
+     })
+ </script>
+</body>
+</html>
